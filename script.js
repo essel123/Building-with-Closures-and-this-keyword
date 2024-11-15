@@ -1,5 +1,6 @@
 //Object Methods and this
 
+
 const person = {
   name: "Essel",
   age: 20,
@@ -84,7 +85,7 @@ function createTimer(duration, elementid) {
 
     if (this.count === 0) {
       clearInterval(id);
-      console.log("Time Expired");
+      console.log("Time Up");
       document.getElementById("error").style.display ="flex"
       
     }
