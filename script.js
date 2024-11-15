@@ -10,19 +10,21 @@ const person = {
   }
 };
 
-// console.log("---without binding, call or apply---");
-//  person.greet()
 
 const anotherperson = { name: "Apusiga", age: 24 };
 
 console.log("-------------call()-----------------");
-person.greet.call(anotherperson);
-console.log("-------------bind()-----------------");
-console.log(person.greet.bind(anotherperson)());
-console.log("-------------apply()-----------------");
+
 person.greet.call(anotherperson);
 
-// console.log("------------------------------------");
+console.log("-------------bind()-----------------");
+
+console.log(person.greet.bind(anotherperson)());
+
+console.log("-------------apply()-----------------");
+
+person.greet.call(anotherperson);
+
 
 //Event Handlers and this
 
@@ -36,7 +38,12 @@ const arrowFunc = () => {
 };
 
 
+
 document.getElementById("btn").addEventListener("click", handleClick);
+document.getElementById("btn").addEventListener("click", arrowFunc);
+
+
+
 
 function createCounter() {
   let count = 0;
@@ -61,6 +68,8 @@ function createCounter() {
 console.log(createCounter().increment());
 
 console.log(createCounter().getCount());
+
+
 
 function createTimer(duration, elementid) {
   this.count = duration;
